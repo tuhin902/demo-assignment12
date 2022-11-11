@@ -6,7 +6,7 @@ const ReviewCard = ({ review }) => {
     // console.log(review)
 
     return (
-        <div className="card w-96 bg-neutral text-neutral-content">
+        <div className="card w-96 bg-neutral text-neutral-content my-6">
             <div className="card-body">
                 <h2 className="card-title">Name:{customer}</h2>
                 <p>Product:{productName}</p>

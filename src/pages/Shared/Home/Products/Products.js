@@ -15,12 +15,9 @@ const Products = () => {
     return (
         <div>
             <div className='text-center mb-4'>
-                <p className='text-2xl font-bold text-orange-600'>
-                    Services
-                </p>
-                <h2 className='text-5xl font-semibold'>Our Services Area</h2>
-                <p>the majority have suffered alteration in some form, by injected humour, or randomised <br />
-                    words which don't look even slightly believable. </p>
+
+                <h2 className='text-5xl font-semibold'>Our Products</h2>
+
             </div>
             <div className='grid gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 my-10'>
                 {

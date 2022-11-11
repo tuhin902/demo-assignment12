@@ -12,7 +12,7 @@ const MyReview = () => {
 
 
     return (
-        <div className='flex justify-center my-10'>
+        <div className='flex justify-center items-center  flex-col my-10'>
             {
                 reviews.map(review => <ReviewCard
                     key={review._id}

@@ -1,7 +1,7 @@
 import React from 'react';
 
 const ProductCard = ({ product }) => {
-    console.log(product);
+    // console.log(product);
     const { img, description, name } = product;
     return (
         <div className="card card-compact w-96 bg-base-100 shadow-xl">
