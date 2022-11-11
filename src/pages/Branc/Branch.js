@@ -5,7 +5,7 @@ const Branch = () => {
     const [branchs, setBranchs] = useState([]);
     console.log(branchs)
     useEffect(() => {
-        fetch('http://localhost:4000/branch')
+        fetch('https://real-tech-server.vercel.app/branch')
             .then(res => res.json())
             .then(data => setBranchs(data))
     }, [])

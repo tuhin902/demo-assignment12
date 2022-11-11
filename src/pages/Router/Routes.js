@@ -31,7 +31,7 @@ const router = createBrowserRouter([
             {
                 path: '/productdeetails/:id',
                 element: <PrivateRoute><ProductDetails></ProductDetails></PrivateRoute>,
-                loader: ({ params }) => fetch(`http://localhost:4000/product/${params.id}`)
+                loader: ({ params }) => fetch(`https://real-tech-server.vercel.app/product/${params.id}`)
             },
             {
                 path: '/review',
