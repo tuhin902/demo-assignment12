@@ -18,6 +18,18 @@ const AddProduct = () => {
 
         }
 
+        fetch('https://real-tech-server.vercel.app/product', {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(newAdd)
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+            })
+
 
     }
     return (
