@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from 'react';
+import useTitle from '../../Hook/useTitle';
 import ReviewCard from './ReviewCard';
 
 const MyReview = () => {
     const [reviews, setReviews] = useState([]);
+    useTitle("Review");
 
     useEffect(() => {
         fetch('https://real-tech-server.vercel.app/review')

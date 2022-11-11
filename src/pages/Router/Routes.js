@@ -1,4 +1,5 @@
 import Main from "../../Layout/Main";
+import AddProduct from "../AddProduct/AddProduct";
 import Blogs from "../Blogs/Blogs";
 import Login from "../Login/Login";
 import MyReview from "../MyReview/MyReview";
@@ -27,6 +28,10 @@ const router = createBrowserRouter([
             {
                 path: '/allproducts',
                 element: <AllProducts></AllProducts>
+            },
+            {
+                path: '/addproduct',
+                element: <AddProduct></AddProduct>
             },
             {
                 path: '/productdeetails/:id',

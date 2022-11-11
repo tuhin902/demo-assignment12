@@ -14,7 +14,10 @@ const Header = () => {
         <li><Link to='/blog'>Blog</Link></li>
         {
             user &&
-            <li><Link to='/review'>My Review</Link></li>
+            <>
+                <li><Link to='/review'>My Review</Link></li>
+                <li><Link to='/addproduct'>Add Product</Link></li>
+            </>
 
         }
         {
