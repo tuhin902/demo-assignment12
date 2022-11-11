@@ -31,8 +31,7 @@ const Products = () => {
                 }
             </div>
             <div className='flex justify-center my-10'>
-
-                <button className='btn'><Link>See all</Link></button>
+                <button className='btn'><Link to='/allproducts'>See all</Link></button>
             </div>
 
         </div >
