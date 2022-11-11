@@ -3,7 +3,7 @@ live website:(https://real-tech-ff233.web.app/).
 
 this website is a laptop warehouse management website.the framwork & library used to build this website is mention below
 
-Firebase
+<P>Firebase</p>
 React router
 Tailwind & Daisy UI
 React Icon
