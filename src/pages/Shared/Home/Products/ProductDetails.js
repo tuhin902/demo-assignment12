@@ -1,13 +1,49 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { useLoaderData } from 'react-router-dom';
+import { AuthContext } from '../../AuthProvider/AuthProvider';
 
 const ProductDetails = () => {
 
+    const { _id, user } = useContext(AuthContext);
     const product = useLoaderData();
+    // console.log(product);
+    const { img, name, description, quantity, price } = product;
 
-    const { img, name, description } = product;
+    const handleSubmit = event => {
+        event.preventDefault();
+        const form = event.target;
+        const name = form.name.value;
+        const email = user?.email || 'unregistered';
+        const productName = form.productname.value;
+        const rating = form.rating.value;
 
-    console.log(product);
+        const review = {
+            productId: _id,
+            productName: productName,
+            customer: name,
+            email,
+            rating
+        }
+
+        fetch('http://localhost:4000/review', {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(review)
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data)
+                if (data.acknowledged) {
+                    alert('Review placed successfully')
+                    form.reset();
+                }
+            })
+            .catch(err => console.error(err))
+
+    }
+
 
     return (
         <div className="hero min-h-screen ">
@@ -15,33 +51,42 @@ const ProductDetails = () => {
                 <div className='w-1/2 '>
                     <img href="#" src={img} className="w-1/2 h-1/2 " />
                     <h1 className="text-3xl font-bold mt-10">{name}</h1>
+                    <p className='text-xl font-semibold py-6'>Quantity:{quantity}</p>
+                    <p className='text-xl font-semibold'>Price:${price}</p>
                     <p className="text-xl font-semibold py-6 w-1/2">{description}</p>
                 </div>
-                <form>
-                    <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl ">
-                        <h2>Your Review</h2>
+                <form onSubmit={handleSubmit}>
+                    <div className="card flex-shrink-0 w-full max-w-sm my-10 shadow-2xl ">
+                        <h2 className='text-3xl font-bold text-center'>Your Review</h2>
                         <div className="card-body">
                             <div className="form-control">
                                 <label className="label">
                                     <span className="label-text">Name</span>
                                 </label>
-                                <input type="text" placeholder="name" className="input input-bordered" />
+                                <input name='name' type="text" placeholder="name" className="input input-bordered" />
                             </div>
                             <div className="form-control">
                                 <label className="label">
                                     <span className="label-text">Product Name</span>
                                 </label>
-                                <input type="text" placeholder="name" className="input input-bordered" />
+                                <input name='productname' type="text" placeholder="name" defaultValue={name} className="input input-bordered" readOnly />
                             </div>
                             <div className="form-control">
                                 <label className="label">
                                     <span className="label-text">Rating</span>
                                 </label>
-                                <input type="text" placeholder="rating" className="input input-bordered" />
+                                <input name='rating' type="text" placeholder="rating" className="input input-bordered" />
+
+                            </div>
+                            <div className="form-control">
+                                <label className="label">
+                                    <span className="label-text">Email</span>
+                                </label>
+                                <input name='email' type="text" placeholder="email" defaultValue={user?.email} className="input input-bordered" readOnly />
 
                             </div>
                             <div className="form-control mt-6">
-                                <button className="btn btn-primary">Submit</button>
+                                <input className='btn' type="submit" value="Submit" />
                             </div>
                         </div>
                     </div>

@@ -1,6 +1,7 @@
 import Main from "../../Layout/Main";
 import Blogs from "../Blogs/Blogs";
 import Login from "../Login/Login";
+import MyReview from "../MyReview/MyReview";
 import PageNotFound from "../PageNotFound/PageNotFound";
 import Register from "../Register/Register";
 import Home from "../Shared/Home/Home";
@@ -30,6 +31,10 @@ const router = createBrowserRouter([
                 path: '/productdeetails/:id',
                 element: <ProductDetails></ProductDetails>,
                 loader: ({ params }) => fetch(`http://localhost:4000/product/${params.id}`)
+            },
+            {
+                path: '/review',
+                element: <MyReview></MyReview>
             },
             {
                 path: '/login',
