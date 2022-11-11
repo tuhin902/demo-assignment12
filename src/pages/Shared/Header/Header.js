@@ -13,8 +13,13 @@ const Header = () => {
         <li><Link to='/'>Home</Link></li>
         <li><Link to='/blog'>Blog</Link></li>
         {
+            user &&
+            <li><Link to='/review'>My Review</Link></li>
+
+        }
+        {
             user ?
-                <button className='btn btn-warning' onClick={handleLogOut}>Sign Out</button>
+                <button className='btn ' onClick={handleLogOut}>Sign Out</button>
                 :
                 <>
 

@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import ReviewCard from './ReviewCard';
 
 const MyReview = () => {
     const [reviews, setReviews] = useState([]);
@@ -11,9 +12,12 @@ const MyReview = () => {
 
 
     return (
-        <div>
+        <div className='flex justify-center my-10'>
             {
-                reviews.map(review => console.log(review))
+                reviews.map(review => <ReviewCard
+                    key={review._id}
+                    review={review}
+                ></ReviewCard>)
             }
 
         </div>

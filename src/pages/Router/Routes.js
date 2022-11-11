@@ -7,6 +7,7 @@ import Register from "../Register/Register";
 import Home from "../Shared/Home/Home";
 import AllProducts from "../Shared/Home/Products/AllProducts";
 import ProductDetails from "../Shared/Home/Products/ProductDetails";
+import PrivateRoute from "../Shared/PrivateRoute/PrivateRoute";
 
 const { createBrowserRouter } = require("react-router-dom");
 
@@ -29,7 +30,7 @@ const router = createBrowserRouter([
             },
             {
                 path: '/productdeetails/:id',
-                element: <ProductDetails></ProductDetails>,
+                element: <PrivateRoute><ProductDetails></ProductDetails></PrivateRoute>,
                 loader: ({ params }) => fetch(`http://localhost:4000/product/${params.id}`)
             },
             {
