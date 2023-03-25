@@ -3,20 +3,22 @@ import './Banner.css';
 
 const Banner = () => {
     return (
-        <div className="carousel w-full py-10">
+        <div className="carousel  w-full py-10">
             <div id="slide1" className="carousel-item relative w-full">
                 <div className='carousel-img '>
                     <img src="https://c8.alamy.com/comp/KFEADG/black-friday-big-sale-banner-design-with-man-hands-typing-on-laptop-KFEADG.jpg" className="w-full rounded-xl" />
                 </div>
-                <div className="absolute flex justify-between transform -translate-y-1/2 left-24 right-5 top-1/2">
-                    <h3 className='text-6xl font-bold text-white'>Big sale is comming <br /> on this friday</h3>
-                </div>
-                <div className="absolute flex justify-between w-1/2 transform -translate-y-1/2 left-24 right-5 top-2/3">
-                    <p className='text-xl text-white'>we are  going to give some discount on some of our laptop. this offer will only available on friday.be ready to grab your desire laptop on a discount price.</p>
-                </div>
-                <div className="absolute flex justify-start w-1/2 transform -translate-y-1/2 left-24 right-5 top-3/4">
-                    <button className="btn btn-info mr-5">Discount more</button>
-                    <button className="btn btn-outline btn-info">Last sell</button>
+                <div className='min-h-screen'>
+                    <div className="absolute flex justify-between transform -translate-y-1/2 left-24 right-5 top-1/2">
+                        <h3 className='text-6xl font-bold text-white'>Big sale is comming <br /> on this friday</h3>
+                    </div>
+                    <div className="absolute flex justify-between w-1/2 transform -translate-y-1/2 left-24 right-5 top-2/3">
+                        <p className='text-xl text-white'>we are  going to give some discount on some of our laptop. this offer will only available on friday.be ready to grab your desire laptop on a discount price.</p>
+                    </div>
+                    <div className="absolute flex justify-start w-1/2 transform -translate-y-1/2 left-24 right-5 top-3/4">
+                        <button className="btn btn-info mr-5">Discount more</button>
+                        <button className="btn btn-outline btn-info">Last sell</button>
+                    </div>
                 </div>
                 <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
                     <a href="#slide4" className="btn btn-circle">❮</a>

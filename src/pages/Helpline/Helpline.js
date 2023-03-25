@@ -3,7 +3,7 @@ import { FaMapMarkedAlt, FaBlenderPhone } from "react-icons/fa";
 
 const Helpline = () => {
     return (
-        <div className=' flex justify-evenly bg-black w-full h-60 rounded-xl p-20 text-white'>
+        <div className=' flex justify-evenly min-h-screen bg-black w-full h-60 rounded-xl p-20 text-white'>
             <div className='flex w-1/2 '>
                 <FaMapMarkedAlt className='text-red-700 text-3xl mx-6'></FaMapMarkedAlt>
                 <div>
